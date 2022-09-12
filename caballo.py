@@ -36,7 +36,6 @@ def mover_arriba(tablero):
                 if x > 0:
                     tablero[x, y] = 0
                     tablero[x-1, y] = 1
-                    return
                 else:
                     print("Movimiento invalido")
 
@@ -47,7 +46,6 @@ def mover_abajo(tablero):
                 if x < tablero.shape[0] - 1 and tablero[x + 1, y]>0:
                     tablero[x, y] = 0
                     tablero[x + 1, y] = 1
-                    return
                 else:
                     print("Movimiento invalido")
 
