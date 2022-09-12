@@ -51,7 +51,7 @@ def mover_abajo(tablero):
                 else:
                     print("Movimiento invalido")
 
-def
+
 print(tablero)
 #mover_arriba(tablero)
 print(tablero)
