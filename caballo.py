@@ -24,9 +24,9 @@ def casillas_caballo3():
 
 print(casillas_caballo3())
 
-tablero=np.array([[0,0,0]
+tablero=np.array([[1,0,0]
                 ,[0,0,0]
-                ,[1,0,0]
+                ,[0,0,0]
                 ,[-1,0,-1]])
 
 def mover_arriba(tablero):
@@ -36,6 +36,7 @@ def mover_arriba(tablero):
                 if x > 0:
                     tablero[x, y] = 0
                     tablero[x-1, y] = 1
+                    return
                 else:
                     print("Movimiento invalido")
 
@@ -43,16 +44,41 @@ def mover_abajo(tablero):
     for x in range(tablero.shape[0]):
         for y in range(tablero.shape[1]):
             if tablero[x, y] == 1:
-                if x < tablero.shape[0] - 1 and tablero[x + 1, y]>0:
+                if x < tablero.shape[0] - 1 and tablero[x + 1, y]>=0:
                     tablero[x, y] = 0
                     tablero[x + 1, y] = 1
+                    return
                 else:
                     print("Movimiento invalido")
 
+def mover_derecha(tablero):
+    for x in range(tablero.shape[0]):
+        for y in range(tablero.shape[1]):
+            if tablero[x, y] == 1:
+                if y<tablero.shape[1]-1 and tablero[x, y+1]>=0:
+                    tablero[x, y] = 0
+                    tablero[x, y+1] = 1
+                    return
+                else:
+                    print("Movimiento invalido")
+
+def mover_izquierda(tablero):
+    for x in range(tablero.shape[0]):
+        for y in range(tablero.shape[1]):
+            if tablero[x, y] == 1:
+                if y>0 and tablero[x, y-1]>=0:
+                    tablero[x, y] = 0
+                    tablero[x, y-1] = 1
+                    return
+                else:
+                    print("Movimiento invalido")
 
 print(tablero)
 #mover_arriba(tablero)
 print(tablero)
 mover_abajo(tablero)
 print(tablero)
-
+#mover_derecha(tablero)
+print(tablero)
+mover_izquierda(tablero)
+print(tablero)
